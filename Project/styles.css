@@ -4,6 +4,13 @@
 	color: #dbd8a2;
 }
 
+a.button
+{
+	-webkit-appearance: button;
+	-moz-apperance: button;
+	appearance: button;
+}
+
 body 
 {
 	background-color: #2c2c2d;
