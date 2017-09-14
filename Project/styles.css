@@ -1,0 +1,30 @@
+*
+{
+	box-sizing: border-box;
+	color: #dbd8a2;
+}
+
+body 
+{
+	background-color: #2c2c2d;
+}
+
+select 
+{
+	width: 15em;
+	background-color: black;
+	margin-left:1em;
+	margin-right:2em;
+}
+
+div.left 
+{
+	float: left;
+	width: 20%;
+}
+
+div.right
+{
+	float:right;
+	width: 20%;
+}
