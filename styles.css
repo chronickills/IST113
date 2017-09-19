@@ -39,3 +39,8 @@ div.right
 	float:right;
 	width: 20%;
 }
+
+div.content
+{
+	display: inline-block;
+}
