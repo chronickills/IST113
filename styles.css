@@ -5,6 +5,11 @@
 	color: #dbd8a2;
 }
 
+title
+{
+	display: none;
+}
+
 body 
 {
 	background-color: #2c2c2d;
