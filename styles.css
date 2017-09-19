@@ -42,6 +42,6 @@ div.right
 
 div.content
 {
-	margin: 0 auto;
+	text-align: center;
 	display: inline-block;
 }
