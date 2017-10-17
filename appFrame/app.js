@@ -16,6 +16,7 @@ function MyApp()
 	{
 		$("#app>header").append(version);
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 		setStatus("Please enter a number if you want to play");
 		$("#submitBtn").val("New Game");
@@ -46,6 +47,9 @@ function MyApp()
 				}
 			}
 		});
+=======
+		setStatus("ready");
+>>>>>>> parent of c158470... lab app frame game
 =======
 		setStatus("ready");
 >>>>>>> parent of c158470... lab app frame game
