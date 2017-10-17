@@ -15,44 +15,7 @@ function MyApp()
 	this.start = function()
 	{
 		$("#app>header").append(version);
-<<<<<<< HEAD
-<<<<<<< HEAD
-		
-		setStatus("Please enter a number if you want to play");
-		$("#submitBtn").val("New Game");
-		$("#submitBtn").on("click",function(){
-			if(newGame)
-			{
-				guesses = 0;
-				guess = 0;
-				number = Number($("#inputBox").val());
-				$("#inputBox").val("");
-				newGame = false;
-				$("#submitBtn").val("Guess");
-				setStatus("Please enter your guess");
-			}
-			else {
-				guess = Number($("#inputBox").val());
-				if(guess == number){
-					setStatus("Congrats, you got it on try number " + guesses + ". Please enter a new number if you wish to play again");
-					gameOver = true;
-					newGame = true;
-					$("#submitBtn").val("New Game");
-				} else if (guess > number){
-					setStatus("Lower than your guess of " + guess);
-					guesses += 1;
-				} else {
-					setStatus("Higher than your guess of " + guess);
-					guesses += 1;
-				}
-			}
-		});
-=======
 		setStatus("ready");
->>>>>>> parent of c158470... lab app frame game
-=======
-		setStatus("ready");
->>>>>>> parent of c158470... lab app frame game
 	};
 } // end MyApp
 
