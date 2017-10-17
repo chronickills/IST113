@@ -21,7 +21,7 @@ function MyApp()
 	{
 		$("#app>header").append(version);
 		
-		setStatus("Please Enter a Number If You Want to Play");
+		setStatus("Please enter a number if you want to play");
 		$("#submitBtn").val("New Game");
 		$("#submitBtn").on("click",function(){
 			if(newGame)
