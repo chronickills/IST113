@@ -4,22 +4,18 @@
 function MyApp()
 {
 	var version = "v1.0";
-	var number = 0;
-	var guess = 0;
-	var guesses = 1;
-	var newGame = true;
-	var gameOver = false;
-	
+
 	// creating a private function
 	function setStatus(message)
 	{
 		$("#app>footer").text(message);
 	}
-	
+
 	// creating a public function
 	this.start = function()
 	{
 		$("#app>header").append(version);
+<<<<<<< HEAD
 		
 		setStatus("Please enter a number if you want to play");
 		$("#submitBtn").val("New Game");
@@ -50,6 +46,9 @@ function MyApp()
 				}
 			}
 		});
+=======
+		setStatus("ready");
+>>>>>>> parent of c158470... lab app frame game
 	};
 } // end MyApp
 
