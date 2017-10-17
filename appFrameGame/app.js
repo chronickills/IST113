@@ -26,7 +26,7 @@ function MyApp()
 		$("#submitBtn").on("click",function(){
 			if(newGame)
 			{
-				guesses = 0;
+				guesses = 1;
 				guess = 0;
 				number = Number($("#inputBox").val());
 				$("#inputBox").val("");
