@@ -106,7 +106,7 @@ function TaskAtHandApp()
 	
 	function onSelectTask(task)
 	{
-		if (tak)
+		if (task)
 		{
 			task.siblings(".selected").removeClass("selected");
 			task.addClass("selected");
