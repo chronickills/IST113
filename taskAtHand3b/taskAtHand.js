@@ -10,7 +10,7 @@ function TaskAtHandApp()
 	
 	function saveTaskList()
 	{
-		if (timeoutId == 0) clearTimeout(timeoutId);
+		if (timeoutId) clearTimeout(timeoutId);
 		setStatus("saving changes...", true);
 		timeoutId = setTimeout(function()
 		{
@@ -19,7 +19,6 @@ function TaskAtHandApp()
 			setStatus("changes saved.");
 		},
 		2000);
-		appStorage.setValue("taskList", taskList.getTasks());
 	}
 	
 	function setStatus(msg, noFade)
@@ -90,55 +89,52 @@ function TaskAtHandApp()
 			saveTaskList();
 			$("#inputBox").val("").focus();
 		}
-		//saveTaskList();
 	}
 	
 	function addTaskElement(task) 
 	{
-		var task = $("#task-template .task").clone();
-		task.data("task-id", task.id);
-		$("span.task-name", task).text(task.name);
+		var $task = $("#task-template .task").clone();
+		$task.data("task-id", task.id);
+		$("span.task-name", $task).text(task.name);
 		
-		$(".details input, .details select", task).change(function() {
-			onChangeTaskDetails(task.id, $(this));
+		$task.click(function() { onSelectTask($task); });
+		
+		$("#task-list").append($task);
+
+		$("button.delete", $task).click(function(){
+			taskList.removeTask(task.id);	
+			removeTask($task);
 		});
 		
-		task.click(function() { onSelectTask(task); });
-		
-		$("#task-list").append(task);
-		
-		
-		
-		$("button.delete", task).click(function(){
-			removeTask(task);
+		$("button.move-up", $task).click(function(){
+			taskList.moveTask(task,true);
+			moveTask($task,true);
 		});
 		
-		$("button.move-up", task).click(function(){
-			moveTask(task,true);
-		});		
-		$("button.move-down", task).click(function(){
-			moveTask(task,false);
+		$("button.move-down", $task).click(function(){
+			taskList.moveTask(task,false);
+			moveTask($task,false);
 		});
 		
-		$("span.task-name",task).click(function(){
+		$("span.task-name", $task).click(function(){
 			onEditTaskName($(this));
 		});
 		
-		$("input.task-name", task).change(function() {
-			onChangeTaskName($(this));
+		$("input.task-name", $task).change(function() {
+			onChangeTaskName($(this), task);
 		})
 		.blur(function() {
 			$(this).hide().siblings("span.task-name").show();
 		});
 		
-		$("button.toggle-details", task).click(function() {
-			toggleDetails(task);
+		$("button.toggle-details", $task).click(function() {
+			toggleDetails($task);
 		});
 		
-		$(".details input, .details select", task).each(function() {
+		$(".details input, .details select", $task).each(function() {
 			var $input = $(this);
 			var fieldName = $input.data("field");
-			$input.val(task[fieldName]);
+			$input.val($task[fieldName]);
 		});
 	}
 	
@@ -170,6 +166,7 @@ function TaskAtHandApp()
 	
 	function removeTask(task)
 	{
+		//taskList.removeTask(task.id);
 		task.remove();
 		saveTaskList();
 	}
@@ -196,15 +193,17 @@ function TaskAtHandApp()
 			.focus();
 	}
 	
-	function onChangeTaskName($input)
+	function onChangeTaskName($input, task)
 	{
 		$input.hide();
 		var $span = $input.siblings("span.task-name");
 		if($input.val())
 		{
 			$span.text($input.val());
+			task.name = $input.val();
 		}
 		$span.show();
+		saveTaskList();
 	}
 	
 	function loadTaskList()

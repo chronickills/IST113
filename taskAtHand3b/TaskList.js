@@ -34,6 +34,21 @@ function TaskList(tasks)
 		return tasks;
 	};
 	
+	this.moveTask = function(task, moveUp)
+	{
+		var index = getTaskIndex(task.id);
+		if (moveUp)
+		{
+			tasks.splice(index, 1);
+			tasks.splice(index - 1, 0, task);
+		}
+		else
+		{
+			tasks.splice(index, 1);
+			tasks.splice(index + 1, 0, task);
+		}
+	};
+	
 	this.addTask = function(task)
 	{
 		tasks.push(task);
@@ -58,7 +73,7 @@ function TaskList(tasks)
 		{
 			if (tasks[i].id == taskId)
 			{
-				return parseint(i);
+				return parseInt(i);
 			}
 		}
 		return -1;
