@@ -3,7 +3,7 @@
 // using a function contructor form to create an object
 function MyApp()
 {
-	var version = "v1.0";
+	var version = "v8.3";
 
 	// creating a private function
 	function setStatus(message)
@@ -16,13 +16,13 @@ function MyApp()
 	{
 		$("#app>header").append(version);
 		setStatus("ready");
-
 		var weatherObj = new WeatherWidget();
 		var weatherWidgetDiv = $("#weather-widget");
 		$("#getWeather").click(function () {
 			weatherObj.update();
 		});
 	};
+
 } // end MyApp
 
 /* 	JQuery's shorthand for the document ready event handler
