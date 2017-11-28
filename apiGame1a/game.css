@@ -4,6 +4,7 @@ body
 	background-color: #1447ff;
 	margin: 0 auto;
 	text-align: center;
+	color: white;
 }
 
 #board>button
@@ -11,11 +12,25 @@ body
 	margin-top: 1em;
 }
 
-#gameScreen>header
+#gameScreen>header, #gameScreen>footer
 {
 	background-color: #3a65ff;
 	font-size: 1.5em;
 	text-align: center;
+}
+
+#gameScreen>footer
+{
+	margin-top: .5em;
+}
+
+table button
+{
+	width:100%;
+	height: 100%;
+	background-color: inherit;
+	border: none;
+	color: inherit;
 }
 
 table, th, td 
