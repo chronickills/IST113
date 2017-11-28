@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>API Game</title>
+		<script src="lib/jquery-3.2.1.min.js"></script>
+		<link href="game.css" rel="StyleSheet" />
+		<script src="game.js"></script>
+
+	</head>
+	<body>
+		<div id = "gameScreen">
+			<header>Jeopardy Game</header>
+			<div id = "board">
+				<button id = "startGame">Start Game</button>
+				<table id = "gameBoard">
+					<tr> <!-- Categories -->
+						<th id = "cat1"></th>
+						<th id = "cat2"></th>
+						<th id = "cat3"></th>
+						<th id = "cat4"></th>
+						<th id = "cat5"></th>
+					</tr>
+					<tr> <!-- Row 1 -->
+						<td id = "cat1q1">100</td>
+						<td id = "cat2q1">100</td>
+						<td id = "cat3q1">100</td>
+						<td id = "cat4q1">100</td>
+						<td id = "cat5q1">100</td>
+					</tr>
+					<tr> <!-- Row 2 -->
+						<td id = "cat1q2">200</td>
+						<td id = "cat2q2">200</td>
+						<td id = "cat3q2">200</td>
+						<td id = "cat4q2">200</td>
+						<td id = "cat5q2">200</td>
+					</tr>
+					<tr> <!-- Row 3 -->
+						<td id = "cat1q3">300</td>
+						<td id = "cat2q3">300</td>
+						<td id = "cat3q3">300</td>
+						<td id = "cat4q3">300</td>
+						<td id = "cat5q3">300</td>
+					</tr>
+					<tr> <!-- Row 4 -->
+						<td id = "cat1q4">400</td>
+						<td id = "cat2q4">400</td>
+						<td id = "cat3q4">400</td>
+						<td id = "cat4q4">400</td>
+						<td id = "cat5q4">400</td>
+					</tr>
+					<tr> <!-- Row 5 -->
+						<td id = "cat1q5">500</td>
+						<td id = "cat2q5">500</td>
+						<td id = "cat3q5">500</td>
+						<td id = "cat4q5">500</td>
+						<td id = "cat5q5">500</td>
+					</tr>
+				</table>
+				
+			</div>
+			<span id = "errorArea"></span>
+			<footer></footer>
+		</div>
+	
+</html>
