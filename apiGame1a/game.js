@@ -21,16 +21,14 @@ function apiGame()
 					$("#cat4").text(cat[3].title);
 					$("#cat5").text(cat[4].title);
 				
-				for (var i = 0; i < 5; i++)
+				for (var i = 0; i < 5; i++) (function(i)
 				{
 					getQuestions(cat[i].id, function(ques) 
 					{
-						globalQuestions(i+1, ques);
-						console.log(i+1);
+						globalQuestions(i, ques);
+						console.log(i);
 					}); //end getQuestions
-				}//end for
-				
-					
+				})(i);//end for	
 			}); //end getCats
 			
 			$("#startGame").css("visibility", "hidden");
@@ -39,6 +37,9 @@ function apiGame()
 		
 		$("#cat1q1").on("click", function() {
 			footerInfo(cat1Questions[0].question + " : " + cat1Questions[0].answer);
+		});
+		$("#cat1q2").on("click", function() {
+			footerInfo(cat1Questions[1].question + " : " + cat1Questions[1].answer);
 		});
 	}
 	
@@ -52,23 +53,23 @@ function apiGame()
 	function globalQuestions(category, questions) 
 	{
 		switch(category) {
-			case 1: 
+			case 0: 
 				cat1Questions = questions;
 				break;
-			case 2:
+			case 1:
 				cat2Questions = questions;
 				break;
-			case 3:
+			case 2:
 				cat3Questions = questions;
 				break;
-			case 4:
+			case 3:
 				cat4Questions = questions;
 				break;
-			case 5:
+			case 4:
 				cat5Questions = questions;
 				break;
 			default:
-				console.log("Wrong category");
+				footerInfo("Wrong Catergory");
 		} //end switch
 	} //end globalQuestions
 	
