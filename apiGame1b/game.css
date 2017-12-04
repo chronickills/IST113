@@ -1,0 +1,70 @@
+body
+{
+	padding: 0;
+	background-color: #1447ff;
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+}
+
+#board>button
+{
+	margin-top: 1em;
+}
+
+#resetGame
+{
+	visibility: hidden;
+}
+
+#controls
+{
+		margin-left: .3em;
+		float: left;
+		position: absolute;
+}
+
+#gameScreen>header, #gameScreen>footer
+{
+	background-color: #3a65ff;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+#gameScreen>footer
+{
+	margin-top: .5em;
+}
+
+table button
+{
+	width:inline-table;
+	height: inline-table;
+	background-color: inherit;
+	border: none;
+	color: inherit;
+	font-size: inherit;
+}
+
+table, th, td 
+{
+	visibility: hidden;
+	border: 4px solid black;
+	border-collapse: collapse;
+}
+
+table
+{
+	margin: 0 auto;
+	margin-top: 1em;
+	width: 75%;
+}
+
+th, td
+{
+	height: 7em;
+	width: 15%;
+	text-align: center;
+	font-size: 1.2em;
+	color: white;
+}
