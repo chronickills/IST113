@@ -81,6 +81,7 @@ th, td
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 td
 {
 	font-size: 1.4em;
@@ -94,6 +95,9 @@ td
 =======
 #showAnswer, #correct, #wrong, table, #screen, #score, #scoreLabel
 >>>>>>> parent of 26cb534... .
+=======
+#showAnswer, #correct, #wrong
+>>>>>>> parent of 7bb0846... design a tad bit
 {
 	display: none;
 }

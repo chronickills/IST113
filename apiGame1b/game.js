@@ -62,11 +62,16 @@ function apiGame()
 <<<<<<< HEAD
 =======
 				$("table, th, td ").css("visibility", "visible");
+<<<<<<< HEAD
 >>>>>>> parent of 26cb534... .
 				$("table").show();
 			} //end if/else			
 =======
 				$("table, th, td ").css("visibility", "visible");
+			} //end if/else
+			
+>>>>>>> parent of 7bb0846... design a tad bit
+=======
 			} //end if/else
 			
 >>>>>>> parent of 7bb0846... design a tad bit
