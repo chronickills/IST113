@@ -32,6 +32,7 @@ body
 #controls
 {
 	margin-top: .5em;
+	margin-bottom: .5em;
 }
 
 #gameScreen>header, #gameScreen>footer
@@ -77,4 +78,24 @@ th, td
 	text-align: center;
 	font-size: 1.2em;
 	color: white;
+}
+
+#showAnswer, #correct, #wrong
+{
+	display: none;
+}
+
+#score, #scoreLabel
+{
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 1em;
+	font-size: 1.3em;
+	margin-left: 5px;
+}
+
+#score
+{
+	border: 2px solid black;
+	width: 2em;
 }

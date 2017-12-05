@@ -12,7 +12,10 @@ function apiGame()
 {
 	this.start = function()
 	{
+		var playerScore = 1000;
 		$("#screen").hide();
+		$("#score").hide();
+		$("#scoreLabel").hide();
 		
 		$("#startGame").click(function() 
 		{
@@ -29,8 +32,12 @@ function apiGame()
 						var idNew = this.id.split("-");
 						this.id = idNew[0];
 					}
-				});				
+				});	
+				//reset all field ids
 				*/
+				
+				$("#score").show();
+				$("#scoreLabel").show();
 				
 				getCats(function(cat){
 						$("#cat1").text(cat[0].title);
@@ -50,31 +57,106 @@ function apiGame()
 				}); //end getCats
 				
 				$("#startGame").text("Reset Game");
-								
 				$("table, th, td ").css("visibility", "visible");
 			} //end if/else
 			
 		}); //end start game click
 		
-		$("#gameBoard").click(
-			function(e){
-				var input = e.target.id;
-				if (input.indexOf("~") != -1 && input.indexOf("-") == -1){
-					var inputSplit = input.split("~");
-				
-					var cat = inputSplit[0];
-					var question = inputSplit[1];
-					question -= 1;
-				
-					$("#screenSpan").text(eval('cat' + cat + 'Questions[' + question +'].question + " : " + cat' + cat + 'Questions[' + question +'].answer'));
-					e.target.id = e.target.id + "-+";
-					console.log(e.target.id);
-					$("#gameBoard").toggle();
-					$("#screen").toggle();
-				} //end if
-			} 
-		); //end jquery board click
+			$("#gameBoard").click(
+				function(e){
+					var input = e.target.id;
+					$(e.target).html(" ");
+					
+					if (input.indexOf("~") != -1 && input.indexOf("-") == -1){
+						var inputSplit = input.split("~");
+					
+					
+						var cat = inputSplit[0];
+						var question = inputSplit[1];
+						question -= 1;
+						
+						var pointValue;
+						switch (question)
+						{
+							case 0:
+								pointValue = 100;
+								break;
+							case 1:
+								pointValue = 200;
+								break;
+							case 2:
+								pointValue = 300;
+								break;
+							case 3:
+								pointValue = 400;
+								break;
+							case 4:
+								pointValue = 500;
+								break;
+							default:
+								footerInfo(error);
+						} //end point value assign switch
+						
+						$("#screenSpan").text(eval('cat' + cat + 'Questions[' + question +'].question')); //show question
+						
+						e.target.id = e.target.id + "-+";
+						console.log(e.target.id);
+						$("#gameBoard").toggle();
+						$("#screen").toggle();
+						$("#startGame").toggle();
+						$("#showAnswer").toggle();
+						
+										
+						$("#showAnswer").click(
+							function(){
+								showAnswer(cat, question);
+							}
+						);//end showAnswer click	
+
+						$("#correct").unbind('click').bind('click',
+							function(){
+								playerScore += pointValue;
+								$("#correct").hide();
+								$("#wrong").hide();
+								$("#startGame").show();
+								$("#screen").hide();
+								$("#gameBoard").show();
+								$("#score").text(playerScore);
+							}
+						); //end correct  button
+						
+						$("#wrong").unbind('click').bind('click',
+							function(){
+								playerScore -= pointValue;
+								if (playerScore > 0){
+									$("#correct").hide();
+									$("#wrong").hide();
+									$("#startGame").show();
+									$("#screen").hide();
+									$("#gameBoard").show();
+									$("#score").text(playerScore);
+								} else {
+									$("#correct").hide();
+									$("#wrong").hide();
+									$("#startGame").show();
+									$("#screenSpan").text("YOU LOSE!");
+									$("#score").text(playerScore);
+								} //end if else
+							}
+						); //end correct  button
+					} //end if
+				}	
+			); //end jquery board click
 	} //end this.start
+	
+	function showAnswer(cat, question)
+	{
+		$("#correct").show();
+		$("#wrong").show();
+		$("#showAnswer").hide();
+		$("#screenSpan").text(eval('cat' + cat + 'Questions[' + question +'].answer')); //show answer
+	}
+	
 	
 	function footerInfo(info)
 	{
