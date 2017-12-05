@@ -80,24 +80,7 @@ th, td
 	color: white;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-td
-{
-	font-size: 1.4em;
-}
-
-<<<<<<< HEAD
-#showAnswer, #correct, #wrong, table, #screen, #screenSpan, #score, #scoreLabel
-=======
 #showAnswer, #correct, #wrong
->>>>>>> parent of 7bb0846... design a tad bit
-=======
-#showAnswer, #correct, #wrong, table, #screen, #score, #scoreLabel
->>>>>>> parent of 26cb534... .
-=======
-#showAnswer, #correct, #wrong
->>>>>>> parent of 7bb0846... design a tad bit
 {
 	display: none;
 }
