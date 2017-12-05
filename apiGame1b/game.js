@@ -14,9 +14,6 @@ function apiGame()
 	{
 		var playerScore = 1000;
 		var qCount = 0;
-		$("#screen").hide();
-		$("#score").hide();
-		$("#scoreLabel").hide();
 		
 		$("#startGame").click(function() 
 		{
@@ -36,7 +33,7 @@ function apiGame()
 				});	
 				//reset all field ids
 				*/
-				
+
 				$("#score").show();
 				$("#scoreLabel").show();
 				
@@ -59,8 +56,8 @@ function apiGame()
 				
 				$("#startGame").text("Reset Game");
 				$("table, th, td ").css("visibility", "visible");
-			} //end if/else
-			
+				$("table").show();
+			} //end if/else			
 		}); //end start game click
 		
 			$("#gameBoard").click(
