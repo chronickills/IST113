@@ -12,16 +12,26 @@ body
 	margin-top: 1em;
 }
 
-#resetGame
+#screen
 {
-	visibility: hidden;
+	margin: 0 auto;
+	width: 75vw;
+	height: 75vh;
+	border: 5px solid black;
+	margin-top: 1em;
+}
+
+#screenSpan
+{
+	position: relative;
+	top: 25%;
+	text-transform: translateY(-50%);
+	font-size: 40px;
 }
 
 #controls
 {
-		margin-left: .3em;
-		float: left;
-		position: absolute;
+	margin-top: .5em;
 }
 
 #gameScreen>header, #gameScreen>footer

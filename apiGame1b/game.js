@@ -12,6 +12,8 @@ function apiGame()
 {
 	this.start = function()
 	{
+		$("#screen").hide();
+		
 		$("#startGame").click(function() 
 		{
 			if($("#startGame").text() == "Reset Game")
@@ -48,7 +50,7 @@ function apiGame()
 				}); //end getCats
 				
 				$("#startGame").text("Reset Game");
-				
+								
 				$("table, th, td ").css("visibility", "visible");
 			} //end if/else
 			
@@ -64,9 +66,11 @@ function apiGame()
 					var question = inputSplit[1];
 					question -= 1;
 				
-					footerInfo(eval('cat' + cat + 'Questions[' + question +'].question + " : " + cat' + cat + 'Questions[' + question +'].answer'));
+					$("#screenSpan").text(eval('cat' + cat + 'Questions[' + question +'].question + " : " + cat' + cat + 'Questions[' + question +'].answer'));
 					e.target.id = e.target.id + "-+";
 					console.log(e.target.id);
+					$("#gameBoard").toggle();
+					$("#screen").toggle();
 				} //end if
 			} 
 		); //end jquery board click
