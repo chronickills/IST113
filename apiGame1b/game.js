@@ -14,6 +14,9 @@ function apiGame()
 	{
 		var playerScore = 1000;
 		var qCount = 0;
+		$("#screen").hide();
+		$("#score").hide();
+		$("#scoreLabel").hide();
 		
 		$("#startGame").click(function() 
 		{
@@ -33,7 +36,7 @@ function apiGame()
 				});	
 				//reset all field ids
 				*/
-
+				
 				$("#score").show();
 				$("#scoreLabel").show();
 				
@@ -55,8 +58,14 @@ function apiGame()
 				}); //end getCats
 				
 				$("#startGame").text("Reset Game");
+<<<<<<< HEAD
 				$("table").show();
 			} //end if/else			
+=======
+				$("table, th, td ").css("visibility", "visible");
+			} //end if/else
+			
+>>>>>>> parent of 7bb0846... design a tad bit
 		}); //end start game click
 		
 			$("#gameBoard").click(
