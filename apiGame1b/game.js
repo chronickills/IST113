@@ -13,6 +13,7 @@ function apiGame()
 	this.start = function()
 	{
 		var playerScore = 1000;
+		var qCount = 0;
 		$("#screen").hide();
 		$("#score").hide();
 		$("#scoreLabel").hide();
@@ -70,7 +71,6 @@ function apiGame()
 					if (input.indexOf("~") != -1 && input.indexOf("-") == -1){
 						var inputSplit = input.split("~");
 					
-					
 						var cat = inputSplit[0];
 						var question = inputSplit[1];
 						question -= 1;
@@ -116,26 +116,49 @@ function apiGame()
 						$("#correct").unbind('click').bind('click',
 							function(){
 								playerScore += pointValue;
-								$("#correct").hide();
-								$("#wrong").hide();
-								$("#startGame").show();
-								$("#screen").hide();
-								$("#gameBoard").show();
-								$("#score").text(playerScore);
-							}
-						); //end correct  button
-						
-						$("#wrong").unbind('click').bind('click',
-							function(){
-								playerScore -= pointValue;
-								if (playerScore > 0){
+								
+								if (qCount < 24) 
+								{
+									console.log(qCount);
 									$("#correct").hide();
 									$("#wrong").hide();
 									$("#startGame").show();
 									$("#screen").hide();
 									$("#gameBoard").show();
 									$("#score").text(playerScore);
+									qCount += 1;
 								} else {
+									console.log(qCount);
+									$("#correct").hide();
+									$("#wrong").hide();
+									$("#startGame").show();
+									$("#screenSpan").text("YOU WIN!");
+									$("#score").text(playerScore);
+								}
+							}
+						); //end correct  button
+						
+						$("#wrong").unbind('click').bind('click',
+							function(){
+								playerScore -= pointValue;
+								if (playerScore > 0 && qCount < 24){
+									console.log(qCount);
+									$("#correct").hide();
+									$("#wrong").hide();
+									$("#startGame").show();
+									$("#screen").hide();
+									$("#gameBoard").show();
+									$("#score").text(playerScore);
+									qCount += 1;
+								} else if (qCount = 24) {
+									console.log(qCount);
+									$("#correct").hide();
+									$("#wrong").hide();
+									$("#startGame").show();
+									$("#screenSpan").text("YOU WIN!");
+									$("#score").text(playerScore);
+								} else {
+									console.log(qCount);
 									$("#correct").hide();
 									$("#wrong").hide();
 									$("#startGame").show();
