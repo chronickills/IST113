@@ -38,11 +38,11 @@ function apiGame()
 				$("#scoreLabel").show();
 				
 				getCats(function(cat){
-						$("#cat1").text(cat[0].title);
-						$("#cat2").text(cat[1].title);
-						$("#cat3").text(cat[2].title);
-						$("#cat4").text(cat[3].title);
-						$("#cat5").text(cat[4].title);
+					$("#cat1").text(cat[0].title);
+					$("#cat2").text(cat[1].title);
+					$("#cat3").text(cat[2].title);
+					$("#cat4").text(cat[3].title);
+					$("#cat5").text(cat[4].title);
 					
 					for (var i = 0; i < 5; i++) (function(i)
 					{
@@ -55,7 +55,6 @@ function apiGame()
 				}); //end getCats
 				
 				$("#startGame").text("Reset Game");
-				$("table, th, td ").css("visibility", "visible");
 				$("table").show();
 			} //end if/else			
 		}); //end start game click
@@ -98,10 +97,10 @@ function apiGame()
 						
 						e.target.id = e.target.id + "-+";
 						console.log(e.target.id);
-						$("#gameBoard").toggle();
-						$("#screen").toggle();
-						$("#startGame").toggle();
-						$("#showAnswer").toggle();
+						$("#gameBoard").hide();
+						$("#screen").show();
+						$("#startGame").hide();
+						$("#showAnswer").show();
 						
 										
 						$("#showAnswer").click(

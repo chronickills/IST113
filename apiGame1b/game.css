@@ -84,7 +84,7 @@ td
 	font-size: 1.4em;
 }
 
-#showAnswer, #correct, #wrong, table, #screen, #score, #scoreLabel
+#showAnswer, #correct, #wrong, table, #screen, #screenSpan, #score, #scoreLabel
 {
 	display: none;
 }
