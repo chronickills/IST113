@@ -41,11 +41,11 @@ function apiGame()
 				$("#scoreLabel").show();
 				
 				getCats(function(cat){
-					$("#cat1").text(cat[0].title);
-					$("#cat2").text(cat[1].title);
-					$("#cat3").text(cat[2].title);
-					$("#cat4").text(cat[3].title);
-					$("#cat5").text(cat[4].title);
+						$("#cat1").text(cat[0].title);
+						$("#cat2").text(cat[1].title);
+						$("#cat3").text(cat[2].title);
+						$("#cat4").text(cat[3].title);
+						$("#cat5").text(cat[4].title);
 					
 					for (var i = 0; i < 5; i++) (function(i)
 					{
@@ -59,6 +59,10 @@ function apiGame()
 				
 				$("#startGame").text("Reset Game");
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+				$("table, th, td ").css("visibility", "visible");
+>>>>>>> parent of 26cb534... .
 				$("table").show();
 			} //end if/else			
 =======
@@ -106,10 +110,10 @@ function apiGame()
 						
 						e.target.id = e.target.id + "-+";
 						console.log(e.target.id);
-						$("#gameBoard").hide();
-						$("#screen").show();
-						$("#startGame").hide();
-						$("#showAnswer").show();
+						$("#gameBoard").toggle();
+						$("#screen").toggle();
+						$("#startGame").toggle();
+						$("#showAnswer").toggle();
 						
 										
 						$("#showAnswer").click(
