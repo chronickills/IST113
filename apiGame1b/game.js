@@ -150,7 +150,7 @@ function apiGame()
 									$("#gameBoard").show();
 									$("#score").text(playerScore);
 									qCount += 1;
-								} else if (qCount = 24) {
+								} else if (qCount == 24) {
 									console.log(qCount);
 									$("#correct").hide();
 									$("#wrong").hide();
